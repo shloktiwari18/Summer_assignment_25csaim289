@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, b, gcd, lcm, x, y, temp;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    x = a;
+    y = b;
+
+    // Find GCD using Euclidean Algorithm
+    while (y != 0)
+    {
+        temp = y;
+        y = x % y;
+        x = temp;
+    }
+
+    gcd = x;
+
+    // Calculate LCM
+    lcm = (a * b) / gcd;
+
+    printf("LCM = %d\n", lcm);
+
+    return 0;
+}
